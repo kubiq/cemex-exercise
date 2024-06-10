@@ -1,0 +1,23 @@
+<div [formGroup]="filterForm">
+  <label>Status</label>
+  <nz-checkbox-group formControlName="status"></nz-checkbox-group>
+
+  <label for="pl">Product Line</label>
+  <nz-select formControlName="productLine" id="pl">
+    <nz-option nzValue="all" nzLabel="All Product Lines"></nz-option>
+    <nz-option *ngFor="let pl of productLineOptions" [nzValue]="pl" [nzLabel]="pl"></nz-option>
+  </nz-select>
+
+  <label for="from">From</label>
+  <nz-date-picker formControlName="from" id="from" nzPlaceHolder="From"></nz-date-picker>
+  <label for="to">To</label>
+  <nz-date-picker formControlName="to" id="to" nzPlaceHolder="To"></nz-date-picker>
+
+  <nz-input-group [nzSuffix]="suffixIconSearch">
+    <input type="text" nz-input formControlName="orderNumber" id="orderNumber" placeholder="Search for Order Number" />
+  </nz-input-group>
+  <ng-template #suffixIconSearch>
+    <span nz-icon nzType="search"></span>
+  </ng-template>
+
+</div>

@@ -3,12 +3,16 @@ export enum OrderStatus {
   inProgress = 'inProgress',
   pending = 'pending',
   completed = 'completed',
-  Unknown = '',
 }
 
 export enum OrderUnit {
   weight = 'TN',
   volume = 'm3',
+}
+
+export interface OrderQuantity {
+  amount: number;
+  unit: OrderUnit;
 }
 
 export interface OrderItem {
@@ -17,7 +21,14 @@ export interface OrderItem {
   orderNumber: number;
   productLine: string;
   product: string;
-  quantity: number;
-  unit: OrderUnit;
+  quantity: OrderQuantity;
   requestedOn: Date;
+}
+
+export interface OrdersFilter {
+  statuses: OrderStatus[];
+  productLine: string;
+  from: Date | null;
+  to: Date | null;
+  orderNumber: number | null;
 }

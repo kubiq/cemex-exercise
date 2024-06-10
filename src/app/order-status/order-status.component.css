@@ -1,12 +1,20 @@
 
+div {
+  ::before {
+    display: block;
+    width: 10px;
+    height: 10px;
+  }
+}
+
 .pending {
-  background-color: #3FA9F5;
+  background-color: var(--progress-color);
 }
 
 .inProgress {
-  background-color: #FBB03B;
+  background-color: var(--warning-color);
 }
 
 .completed {
-  background-color: #7AC943;
+  background-color: var(--success-color);
 }

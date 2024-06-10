@@ -1,7 +1,7 @@
 import { Component } from '@angular/core';
 
 @Component({
-  selector: 'app-order-search',
+  selector: 'ce-order-search',
   standalone: true,
   imports: [],
   templateUrl: './order-search.component.html',

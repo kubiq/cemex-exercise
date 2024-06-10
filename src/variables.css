@@ -1,0 +1,9 @@
+
+html {
+  --primary-color: #001C3B;
+  --background-color: #F4F6F9;
+
+  --progress-color: #7AC943;
+  --warning-color: #7AC943;
+  --success-color: #7AC943;
+}
