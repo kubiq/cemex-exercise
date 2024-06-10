@@ -1,0 +1,12 @@
+
+.pending {
+  background-color: #3FA9F5;
+}
+
+.inProgress {
+  background-color: #FBB03B;
+}
+
+.completed {
+  background-color: #7AC943;
+}

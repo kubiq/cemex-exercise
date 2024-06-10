@@ -1,0 +1,10 @@
+  <div class="content">
+    <h3>Order History</h3>
+    <div>filtry</div>
+    <ul>
+      <li>Header</li>
+      <li *ngFor="let order of orders">
+        <app-order-status [status]="order.status"></app-order-status> - {{order.quantity}}
+      </li>
+    </ul>
+  </div>
