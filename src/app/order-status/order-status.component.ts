@@ -5,8 +5,8 @@ import { OrderStatus } from '../../types';
   selector: 'ce-order-status',
   standalone: true,
   imports: [],
-  template: '<div [className]="status"></div><span>{{ status }}</span>',
-  styleUrl: './order-status.component.css'
+  template: '<div [className]="status">{{ status }}</div>',
+  styleUrl: './order-status.component.css',
 })
 export class OrderStatusComponent {
 

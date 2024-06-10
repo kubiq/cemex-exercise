@@ -1,8 +1,7 @@
 <div class="content">
   <h2 class="content-header">Order History</h2>
-  <div>
-    <ce-order-filter [productLineOptions]="ordersService.productLineOptions$ | async" (filterChange)="ordersService.setFilter($event)"></ce-order-filter>
-  </div>
+
+  <ce-order-filter [productLineOptions]="ordersService.productLineOptions$ | async" (filterChange)="ordersService.setFilter($event)"></ce-order-filter>
 
   <ng-container *ngIf="ordersService.orders$ | async as orders">
     <nz-table #orderTable [nzData]="orders" [nzShowPagination]="false">

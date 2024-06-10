@@ -1,20 +1,30 @@
 
 div {
-  ::before {
-    display: block;
-    width: 10px;
-    height: 10px;
+  &::before {
+    content: '';
+    display: inline-block;
+    width: 20px;
+    height: 0.9rem;
+    margin-bottom: -3px;
+    margin-right: 5px;
+    border-radius: 2px;
   }
 }
 
 .pending {
-  background-color: var(--progress-color);
+  &::before {
+    background-color: var(--warning-color);
+  }
 }
 
 .inProgress {
-  background-color: var(--warning-color);
+  &::before {
+    background-color: var(--progress-color);
+  }
 }
 
 .completed {
-  background-color: var(--success-color);
+  &::before {
+    background-color: var(--completed-color);
+  }
 }

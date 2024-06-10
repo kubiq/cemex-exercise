@@ -88,7 +88,7 @@ export class OrdersService {
   ]);
 
   // Filter data based on filters
-  public orders$: Observable<OrderItem[]> = combineLatest([
+  orders$: Observable<OrderItem[]> = combineLatest([
     this.ordersSubject,
     this.filterSubject,
   ])
@@ -103,7 +103,7 @@ export class OrdersService {
       }),
     );
 
-  public productLineOptions$: Observable<string[]> = this.ordersSubject.pipe(
+  productLineOptions$: Observable<string[]> = this.ordersSubject.pipe(
     map(orders => orders.map(order => order.productLine)),
     map(productLines => [...new Set(productLines)]),
   );

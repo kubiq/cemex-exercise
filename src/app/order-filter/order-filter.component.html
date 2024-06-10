@@ -1,6 +1,8 @@
 <div [formGroup]="filterForm">
-  <label>Status</label>
-  <nz-checkbox-group formControlName="status"></nz-checkbox-group>
+  <label for="status">Status</label>
+  <nz-checkbox-group id="status" formControlName="status"></nz-checkbox-group>
+
+  <nz-divider nzType="vertical"></nz-divider>
 
   <label for="pl">Product Line</label>
   <nz-select formControlName="productLine" id="pl">
@@ -8,10 +10,14 @@
     <nz-option *ngFor="let pl of productLineOptions" [nzValue]="pl" [nzLabel]="pl"></nz-option>
   </nz-select>
 
+  <nz-divider nzType="vertical"></nz-divider>
+
   <label for="from">From</label>
   <nz-date-picker formControlName="from" id="from" nzPlaceHolder="From"></nz-date-picker>
   <label for="to">To</label>
   <nz-date-picker formControlName="to" id="to" nzPlaceHolder="To"></nz-date-picker>
+
+  <nz-divider nzType="vertical"></nz-divider>
 
   <nz-input-group [nzSuffix]="suffixIconSearch">
     <input type="text" nz-input formControlName="orderNumber" id="orderNumber" placeholder="Search for Order Number" />
