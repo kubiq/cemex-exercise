@@ -28,6 +28,7 @@
               }
             ],
             "styles": [
+              "node_modules/normalize.css/normalize.css",
               "src/theme.less",
               "src/variables.css",
               "src/styles.css"
@@ -89,6 +90,7 @@
               }
             ],
             "styles": [
+              "node_modules/normalize.css/normalize.css",
               "src/theme.less",
               "src/variables.css",
               "src/styles.css"

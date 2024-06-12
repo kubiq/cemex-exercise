@@ -6,9 +6,9 @@ import { en_US, provideNzI18n } from 'ng-zorro-antd/i18n';
 import { registerLocaleData } from '@angular/common';
 import en from '@angular/common/locales/en';
 import { ReactiveFormsModule } from '@angular/forms';
-import { provideAnimationsAsync } from '@angular/platform-browser/animations/async';
 import { provideHttpClient } from '@angular/common/http';
 import { NzConfig, provideNzConfig } from 'ng-zorro-antd/core/config';
+import { provideNoopAnimations } from '@angular/platform-browser/animations';
 
 registerLocaleData(en);
 
@@ -24,7 +24,7 @@ export const appConfig: ApplicationConfig = {
     provideRouter(routes),
     provideNzI18n(en_US),
     importProvidersFrom(ReactiveFormsModule),
-    provideAnimationsAsync(),
+    provideNoopAnimations(),
     provideHttpClient(),
     provideNzConfig(ngZorroConfig),
   ]
