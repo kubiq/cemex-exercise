@@ -1,0 +1,50 @@
+
+:host {
+  --border-shadow: 0px 2px 4px rgba(0, 0, 0, 0.15);
+  --border-radius: 3px;
+}
+
+ce-order-filter {
+
+  background-color: var(--background-color);
+  margin-bottom: 2rem;
+
+  box-shadow: var(--border-shadow);
+  padding: 1rem;
+  border-radius: var(--border-radius);
+
+}
+
+.orders-table {
+  width: 100%;
+  border-collapse: separate;
+  border-spacing: 0 1rem;
+
+  thead th {
+    text-align: start;
+    padding-left: 1rem;
+  }
+
+  .order-item {
+    box-shadow: var(--border-shadow);
+
+    td {
+      background-color: var(--background-color);
+      padding: 1rem;
+
+      &:first-child {
+        box-shadow: var(--border-shadow);
+
+        border-top-left-radius: var(--border-radius);
+        border-bottom-left-radius: var(--border-radius);
+      }
+
+      &:last-child {
+        box-shadow: var(--border-shadow);
+
+        border-top-right-radius: var(--border-radius);
+        border-bottom-right-radius: var(--border-radius);
+      }
+    }
+  }
+}

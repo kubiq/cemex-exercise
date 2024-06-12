@@ -1,6 +1,6 @@
 
 body, html {
-  background-color: var(--background-color);
+  background-color: var(--body-color);
 }
 
 .main {
@@ -11,4 +11,12 @@ body, html {
 
 .content-header {
   color: var(--primary-color);
+}
+
+.ant-select-single, .ant-select-single:not(.ant-select-customize-input) .ant-select-selector, .ant-picker {
+  padding-left: 0;
+}
+
+.ant-select-arrow, .anticon-search {
+  color: var(--progress-color);
 }

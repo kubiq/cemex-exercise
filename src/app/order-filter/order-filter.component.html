@@ -1,29 +1,40 @@
-<div [formGroup]="filterForm">
-  <label for="status">Status</label>
-  <nz-checkbox-group id="status" formControlName="status"></nz-checkbox-group>
+<ng-container [formGroup]="filterForm">
+  <div class="fp">
+    <label for="status">Status</label>
+    <nz-checkbox-group id="status" formControlName="status"></nz-checkbox-group>
+  </div>
 
-  <nz-divider nzType="vertical"></nz-divider>
+  <div class="vertical-divider"></div>
 
-  <label for="pl">Product Line</label>
-  <nz-select formControlName="productLine" id="pl">
-    <nz-option nzValue="all" nzLabel="All Product Lines"></nz-option>
-    <nz-option *ngFor="let pl of productLineOptions" [nzValue]="pl" [nzLabel]="pl"></nz-option>
-  </nz-select>
+  <div class="fp">
+    <label for="pl">Product Line</label>
+    <nz-select nzBorderless formControlName="productLine" id="pl">
+      <nz-option nzValue="all" nzLabel="All Product Lines"></nz-option>
+      <nz-option *ngFor="let pl of productLineOptions" [nzValue]="pl" [nzLabel]="pl"></nz-option>
+    </nz-select>
+  </div>
 
-  <nz-divider nzType="vertical"></nz-divider>
+  <div class="vertical-divider"></div>
 
-  <label for="from">From</label>
-  <nz-date-picker formControlName="from" id="from" nzPlaceHolder="From"></nz-date-picker>
-  <label for="to">To</label>
-  <nz-date-picker formControlName="to" id="to" nzPlaceHolder="To"></nz-date-picker>
+  <div class="fp">
+    <label for="from">From</label>
+    <nz-date-picker nzBorderless formControlName="from" id="from" nzPlaceHolder="From"></nz-date-picker>
+  </div>
 
-  <nz-divider nzType="vertical"></nz-divider>
+  <div class="fp">
+    <label for="to">To</label>
+    <nz-date-picker nzBorderless formControlName="to" id="to" nzPlaceHolder="To"></nz-date-picker>
+  </div>
 
-  <nz-input-group [nzSuffix]="suffixIconSearch">
-    <input type="text" nz-input formControlName="orderNumber" id="orderNumber" placeholder="Search for Order Number" />
-  </nz-input-group>
-  <ng-template #suffixIconSearch>
-    <span nz-icon nzType="search"></span>
-  </ng-template>
+  <div class="vertical-divider"></div>
 
-</div>
+  <div class="fp">
+    <nz-input-group [nzSuffix]="suffixIconSearch">
+      <input type="text" nz-input formControlName="orderNumber" id="orderNumber" placeholder="Search for Order Number"/>
+    </nz-input-group>
+    <ng-template #suffixIconSearch>
+      <span nz-icon nzType="search"></span>
+    </ng-template>
+  </div>
+
+</ng-container>

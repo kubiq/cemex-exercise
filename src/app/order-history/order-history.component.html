@@ -1,11 +1,14 @@
 <div class="content">
   <h2 class="content-header">Order History</h2>
 
-  <ce-order-filter [productLineOptions]="ordersService.productLineOptions$ | async" (filterChange)="ordersService.setFilter($event)"></ce-order-filter>
+  <ce-order-filter [productLineOptions]="ordersService.productLineOptions$ | async"
+                   (filterChange)="ordersService.setFilter($event)"></ce-order-filter>
 
   <ng-container *ngIf="ordersService.orders$ | async as orders">
-    <nz-table #orderTable [nzData]="orders" [nzShowPagination]="false">
-      <thead><tr>
+
+    <table class="orders-table">
+      <thead>
+      <tr>
         <th>Status</th>
         <th>Order Number</th>
         <th>Product Line</th>
@@ -14,22 +17,25 @@
         <th>Date Requested</th>
       </tr>
       </thead>
+
       <tbody>
-      <tr class="order-item" *ngFor="let o of orderTable.data; trackBy: trackByOrder">
+      <tr class="order-item" *ngFor="let o of orders; trackBy: trackByOrder">
         <td>
           <ce-order-status [status]="o.status"></ce-order-status>
         </td>
-        <td>{{o.orderNumber}}</td>
-        <td>{{o.productLine}}</td>
-        <td>{{o.product}}</td>
-        <td><ce-order-quantity [quantity]="o.quantity"></ce-order-quantity></td>
-        <td>{{o.requestedOn | date}}</td>
+        <td>{{ o.orderNumber }}</td>
+        <td>{{ o.productLine }}</td>
+        <td><strong>{{ o.product }}</strong></td>
+        <td>
+          <ce-order-quantity [quantity]="o.quantity"></ce-order-quantity>
+        </td>
+        <td>{{ o.requestedOn | date }}</td>
       </tr>
-
       </tbody>
-    </nz-table>
+
+    </table>
   </ng-container>
 
-  <img src="public/exercise-idle.png" alt="" >
+  <img src="public/exercise-idle.png" alt="">
 
 </div>
