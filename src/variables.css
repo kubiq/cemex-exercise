@@ -1,7 +1,8 @@
 
 html {
   --primary-color: #001C3B;
-  --background-color: #F4F6F9;
+  --background-color: #fff;
+  --body-color: #F4F6F9;
 
   --progress-color: #3FA9F5;
   --warning-color: #FBB03B;

@@ -1,3 +1,4 @@
+import { NzCheckBoxOptionInterface } from 'ng-zorro-antd/checkbox';
 
 export enum OrderStatus {
   inProgress = 'inProgress',
@@ -26,9 +27,17 @@ export interface OrderItem {
 }
 
 export interface OrdersFilter {
-  statuses: OrderStatus[];
-  productLine: string;
-  from: Date | null;
-  to: Date | null;
-  orderNumber: number | null;
+  status: OrderStatus[];
+  productLine?: string;
+  from?: Date;
+  to?: Date;
+  orderNumber?: number;
+}
+
+export interface OrdersFilterForm {
+  status?: NzCheckBoxOptionInterface[];
+  productLine?: string;
+  from?: Date | null;
+  to?: Date | null;
+  orderNumber?: number | null;
 }

@@ -1,7 +1,6 @@
 import { Injectable } from '@angular/core';
 import { OrderItem, OrdersFilter, OrderStatus, OrderUnit } from '../types';
 import { BehaviorSubject, combineLatest, map, Observable } from 'rxjs';
-import { FormControl } from '@angular/forms';
 
 @Injectable({
   providedIn: 'root',
@@ -11,11 +10,8 @@ export class OrdersService {
   private allProductLinesOption = 'all';
 
   private filterSubject = new BehaviorSubject<OrdersFilter>({
-    statuses: [],
+    status: [],
     productLine: 'all',
-    from: null,
-    to: null,
-    orderNumber: null,
   });
 
   private ordersSubject = new BehaviorSubject([{
@@ -39,7 +35,7 @@ export class OrdersService {
       amount: 10,
       unit: OrderUnit.weight,
     },
-    requestedOn: new Date('2020-10-10'),
+    requestedOn: new Date('2022-10-10'),
   }, {
     id: 3,
     status: OrderStatus.pending,
@@ -94,7 +90,7 @@ export class OrdersService {
   ])
     .pipe(map(([orders, filter]) => {
         return orders.filter(order => {
-          return (!filter.statuses || filter.statuses.length === 0 || filter.statuses.includes(order.status))
+          return (!filter.status || filter.status.length === 0 || filter.status.includes(order.status))
             && (!filter.productLine || filter.productLine === this.allProductLinesOption || filter.productLine === order.productLine)
             && (!filter.from || order.requestedOn >= filter.from)
             && (!filter.to || order.requestedOn <= filter.to)
@@ -109,6 +105,7 @@ export class OrdersService {
   );
 
   setFilter(filter: OrdersFilter) {
+    console.log('filter', filter);
     this.filterSubject.next(filter);
   }
 
