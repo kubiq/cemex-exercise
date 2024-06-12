@@ -3,12 +3,6 @@ body, html {
   background-color: var(--body-color);
 }
 
-.main {
-  display: flex;
-  justify-content: center;
-  width: 100vw;
-}
-
 .content-header {
   color: var(--primary-color);
 }
@@ -27,4 +21,8 @@ body, html {
 
 .ant-picker {
   padding: 0;
+}
+
+.ant-input::placeholder {
+  color: var(--placeholder-color);
 }

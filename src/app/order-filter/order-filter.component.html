@@ -8,7 +8,7 @@
 
   <div class="fp">
     <label for="pl">Product Line</label>
-    <nz-select nzBorderless formControlName="productLine" id="pl">
+    <nz-select nzSize="small" nzBorderless formControlName="productLine" id="pl">
       <nz-option nzValue="all" nzLabel="All Product Lines"></nz-option>
       <nz-option *ngFor="let pl of productLineOptions" [nzValue]="pl" [nzLabel]="pl"></nz-option>
     </nz-select>
@@ -18,18 +18,18 @@
 
   <div class="fp">
     <label for="from">From</label>
-    <nz-date-picker nzBorderless formControlName="from" id="from" nzPlaceHolder="From"></nz-date-picker>
+    <nz-date-picker nzSize="small" nzBorderless formControlName="from" id="from" nzPlaceHolder="From"></nz-date-picker>
   </div>
 
   <div class="fp">
     <label for="to">To</label>
-    <nz-date-picker nzBorderless formControlName="to" id="to" nzPlaceHolder="To"></nz-date-picker>
+    <nz-date-picker nzSize="small" nzBorderless formControlName="to" id="to" nzPlaceHolder="To"></nz-date-picker>
   </div>
 
   <div class="vertical-divider"></div>
 
   <div class="fp">
-    <nz-input-group [nzSuffix]="suffixIconSearch">
+    <nz-input-group nzSize="large" [nzSuffix]="suffixIconSearch">
       <input type="text" nz-input formControlName="orderNumber" id="orderNumber" placeholder="Search for Order Number"/>
     </nz-input-group>
     <ng-template #suffixIconSearch>

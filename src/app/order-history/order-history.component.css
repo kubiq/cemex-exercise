@@ -1,102 +1,50 @@
 
 :host {
   --border-shadow: 0px 2px 4px rgba(0, 0, 0, 0.15);
-  --border-shadow: 0px 2px 4px rgba(0, 0, 0, 1);
   --border-radius: 3px;
 }
 
 ce-order-filter {
 
   background-color: var(--background-color);
-  margin-bottom: 2rem;
+  margin-bottom: 3rem;
 
   box-shadow: var(--border-shadow);
   padding: 1rem;
   border-radius: var(--border-radius);
 }
 
-.orders-table {
-  width: 100%;
-  border-collapse: separate;
-  border-spacing: 0 1rem;
+.grid-table {
+  display: grid;
+  grid-template-columns: 1fr;
+  grid-template-rows: 2rem auto;
+  align-content: space-evenly;
 
-  thead th {
-    text-align: start;
-    padding-left: 1rem;
-  }
-
-  .order-item {
-    position: relative;
-    /*background: transparent;*/
-
-    box-shadow: var(--border-shadow);
-
-    &:before {
-      /*content: "";*/
-      position: absolute;
-      top: 0;
-      left: 0;
-      width: 100%;
-      height: 100%;
-      box-shadow: var(--border-shadow);
-      border-radius: var(--border-radius);
-      /*background-color: red;*/
-      /*background-color: var(--background-color);*/
-      z-index: -1;
-    }
-
-    td {
-      padding: 1rem;
-      /*background-color: var(--background-color);*/
-      border-radius: var(--border-radius);
-
-      &:first-child {
-        border-top-left-radius: var(--border-radius);
-        border-bottom-left-radius: var(--border-radius);
-      }
-
-      &:last-child {
-        border-top-right-radius: var(--border-radius);
-        border-bottom-right-radius: var(--border-radius);
-      }
-    }
-  }
+  row-gap: 1rem;
 }
 
-/*.orders-table {*/
-/*  width: 100%;*/
-/*  border-collapse: separate;*/
-/*  border-spacing: 0 1rem;*/
-/*}*/
+.header-cell {
+  padding-left: 1rem;
+  padding-right: 1rem;
+  padding-bottom: 0.5rem;
+  font-weight: bold;
+}
 
-/*.orders-table tr {*/
-/*  position: relative;*/
-/*  background-color: var(--background-color);*/
+.cell {
+  padding: 1rem;
+}
 
-/*}*/
+.header-row, .row {
+  display: grid;
+  grid-template-columns: 1fr 1fr 1fr 2fr 1fr 1fr;
+}
 
-/*.orders-table tr:before {*/
-/*  content: "";*/
-/*  position: absolute;*/
-/*  top: 0;*/
-/*  left: 0;*/
-/*  width: 100%;*/
-/*  height: 100%;*/
-/*  box-shadow: var(--border-shadow);*/
-/*  z-index: 1;*/
-/*}*/
+.row {
+  background-color: var(--background-color);
+  border-radius: var(--border-radius);
+  box-shadow: var(--border-shadow);
+}
 
-/*.orders-table .order-item td {*/
-/*  background-color: var(--background-color);*/
-/*  padding: 1rem;*/
-
-/*  &:first-child {*/
-/*    border-top-left-radius: var(--border-radius);*/
-/*    border-bottom-left-radius: var(--border-radius);*/
-/*  }*/
-
-/*  &:last-child {*/
-/*    border-top-right-radius: var(--border-radius);*/
-/*    border-bottom-right-radius: var(--border-radius);*/
-/*  }*/
-/*}*/
+.cell {
+  /*background-color: var(--background-color);*/
+}

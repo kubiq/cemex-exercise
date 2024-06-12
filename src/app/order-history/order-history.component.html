@@ -6,36 +6,26 @@
 
   <ng-container *ngIf="ordersService.orders$ | async as orders">
 
-    <table class="orders-table">
-      <thead>
-      <tr>
-        <th>Status</th>
-        <th>Order Number</th>
-        <th>Product Line</th>
-        <th>Product</th>
-        <th>Quantity</th>
-        <th>Date Requested</th>
-      </tr>
-      </thead>
+    <div class="grid-table">
+        <div class="header-row">
+          <div class="header-cell">Status</div>
+          <div class="header-cell">Order Number</div>
+          <div class="header-cell">Product Line</div>
+          <div class="header-cell">Product</div>
+          <div class="header-cell">Quantity</div>
+          <div class="header-cell">Date Requested</div>
+        </div>
 
-      <tbody>
-      <tr class="order-item" *ngFor="let o of orders; trackBy: trackByOrder">
-        <td>
-          <ce-order-status [status]="o.status"></ce-order-status>
-        </td>
-        <td>{{ o.orderNumber }}</td>
-        <td>{{ o.productLine }}</td>
-        <td><strong>{{ o.product }}</strong></td>
-        <td>
-          <ce-order-quantity [quantity]="o.quantity"></ce-order-quantity>
-        </td>
-        <td>{{ o.requestedOn | date }}</td>
-      </tr>
-      </tbody>
-
-    </table>
+        <div class="row" *ngFor="let o of orders; trackBy: trackByOrder">
+          <div class="cell"><ce-order-status [status]="o.status"></ce-order-status></div>
+          <div class="cell">{{ o.orderNumber }}</div>
+          <div class="cell">{{ o.productLine }}</div>
+          <div class="cell"><strong>{{ o.product }}</strong></div>
+          <div class="cell"><ce-order-quantity [quantity]="o.quantity"></ce-order-quantity></div>
+          <div class="cell">{{ o.requestedOn | date:'dd.MM.YYYY' }}</div>
+        </div>
+    </div>
   </ng-container>
 
-  <img src="public/exercise-idle.png" alt="">
 
 </div>
