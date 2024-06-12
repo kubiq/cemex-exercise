@@ -20,3 +20,11 @@ body, html {
 .ant-select-arrow, .anticon-search {
   color: var(--progress-color);
 }
+
+.anticon-calendar {
+  color: var(--primary-color);
+}
+
+.ant-picker {
+  padding: 0;
+}
