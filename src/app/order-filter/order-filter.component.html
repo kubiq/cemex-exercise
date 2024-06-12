@@ -1,20 +1,16 @@
 <ng-container [formGroup]="filterForm">
-  <div class="fp">
+  <div class="fp hr">
     <label for="status">Status</label>
     <nz-checkbox-group id="status" formControlName="status"></nz-checkbox-group>
   </div>
 
-  <div class="vertical-divider"></div>
-
-  <div class="fp">
+  <div class="fp hr">
     <label for="pl">Product Line</label>
     <nz-select nzSize="small" nzBorderless formControlName="productLine" id="pl">
       <nz-option nzValue="all" nzLabel="All Product Lines"></nz-option>
       <nz-option *ngFor="let pl of productLineOptions" [nzValue]="pl" [nzLabel]="pl"></nz-option>
     </nz-select>
   </div>
-
-  <div class="vertical-divider"></div>
 
   <div class="fp">
     <label for="from">From</label>
@@ -25,8 +21,6 @@
     <label for="to">To</label>
     <nz-date-picker nzSize="small" nzBorderless [nzFormat]="dateFormat" formControlName="to" id="to" nzPlaceHolder="To"></nz-date-picker>
   </div>
-
-  <div class="vertical-divider"></div>
 
   <div class="separator"></div>
 

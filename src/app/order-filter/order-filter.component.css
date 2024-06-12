@@ -1,10 +1,13 @@
 
 :host {
+  --column-gap: 0.5rem;
+
   display: flex;
   margin-bottom: 2rem;
   justify-content: flex-start;
-  column-gap: 0.5rem;
+  column-gap: var(--column-gap);
   flex-flow: row wrap;
+
 }
 
 .vertical-divider {
@@ -15,6 +18,12 @@
 }
 
 .fp {
+
+  &.hr {
+    border-right: 2px solid var(--divider-color);
+    padding-right: var(--column-gap);
+  }
+
   label {
     display: block;
     color: var(--primary-color);
@@ -24,12 +33,18 @@
 
   &.search {
     width: 100%;
+    padding-top: 0.5rem;
   }
 }
 
 @media (min-width: 900px) {
   .fp.search {
     width: 15rem;
+    padding-top: 0;
+  }
+
+  :host {
+    --column-gap: 1rem;
   }
 }
 
