@@ -1,15 +1,16 @@
 
 :host {
   display: flex;
-  justify-content: space-between;
   margin-bottom: 2rem;
-  align-content: stretch;
-  column-gap: 1rem;
+  justify-content: flex-start;
+  column-gap: 0.5rem;
+  flex-flow: row wrap;
 }
 
 .vertical-divider {
   border-left: 2px solid var(--divider-color);
   height: 100%;
+  width: 2px;
   content: "";
 }
 
@@ -19,6 +20,16 @@
     color: var(--primary-color);
     font-weight: bold;
     font-size: 80%;
+  }
+
+  &.search {
+    width: 100%;
+  }
+}
+
+@media (min-width: 900px) {
+  .fp.search {
+    width: 15rem;
   }
 }
 
