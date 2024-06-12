@@ -17,51 +17,98 @@ ce-order-filter {
   row-gap: 1rem;
 }
 
-
 .header-cell {
-  padding-left: 1rem;
-  padding-right: 1rem;
   padding-bottom: 0.5rem;
   font-weight: bold;
 }
 
+.order-state, .request {
+  display: contents;
+}
+
 .cell {
-  padding: 1rem;
+  padding-top: 1rem;
+  padding-bottom: 1rem;
+}
+
+.header-row, .row {
+  display: grid;
+  grid-template-columns: minmax(4rem, 10rem) minmax(7rem, 10rem) 1fr 2fr 1fr 1.2fr;
 }
 
 .header-row {
-  display: none;
+  margin-bottom: -1rem; /* offset row-gap */
 }
-
-/* For large screens */
-@media (min-width: 1000px) {
-  .header-row, .row {
-    display: grid;
-    grid-template-columns: minmax(4rem, 10rem) minmax(7rem, 10rem) 1fr 2fr 1fr 1fr;
-  }
-}
-
-@media (max-width: 600px) {
-
-  .row {
-    grid-template-columns: 1fr;
-  }
-
-  .cell {
-    display: grid;
-    grid-template-columns: minmax(9em, 30%) 1fr;
-  }
-
-  .cell::before {
-    content: attr(data-name);
-  }
-}
-
 
 .row {
   background-color: var(--background-color);
   border-radius: var(--border-radius);
   box-shadow: var(--border-shadow);
+}
+
+/* For large screens */
+@media (min-width: 900px) {
+  .cell {
+    padding: 1rem;
+  }
+
+  .header-cell {
+    padding-left: 1rem;
+    padding-right: 1rem;
+  }
+}
+
+@media (max-width: 900px) and (min-width: 600px) {
+  .header-row, .row {
+    display: grid;
+    grid-template-columns: minmax(100px, 160px) 1fr 3fr 1fr;
+  }
+
+  .order-state, .request {
+    display: grid;
+    grid-auto-rows: 1rem;
+    padding: 0.5rem;
+
+    .cell, .header-cell {
+      padding: 0;
+    }
+  }
+}
+
+/* Small screens */
+@media (max-width: 600px) {
+  .header-row {
+    display: none;
+  }
+
+  .row {
+    grid-template-columns: 1fr;
+
+    >:first-child {
+      padding-top: 1rem;
+    }
+
+    >:last-child {
+      padding-bottom: 1rem;
+    }
+  }
+
+  .cell {
+    display: grid;
+    grid-template-columns: minmax(9em, 30%) 1fr;
+    padding: .2rem 1rem;
+  }
+
+  .cell::before {
+    content: attr(data-name);
+    font-weight: bold;
+    color: var(--primary-color);
+  }
+
+  .order-state, .request {
+    display: contents;
+
+  }
 }
 
 .noResults {
