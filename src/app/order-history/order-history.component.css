@@ -12,11 +12,11 @@ ce-order-filter {
 .grid-table {
   display: grid;
   grid-template-columns: 1fr;
-  grid-template-rows: 2rem auto;
   align-content: space-evenly;
 
   row-gap: 1rem;
 }
+
 
 .header-cell {
   padding-left: 1rem;
@@ -29,10 +29,34 @@ ce-order-filter {
   padding: 1rem;
 }
 
-.header-row, .row {
-  display: grid;
-  grid-template-columns: 1fr 1fr 1fr 2fr 1fr 1fr;
+.header-row {
+  display: none;
 }
+
+/* For large screens */
+@media (min-width: 1000px) {
+  .header-row, .row {
+    display: grid;
+    grid-template-columns: minmax(4rem, 10rem) minmax(7rem, 10rem) 1fr 2fr 1fr 1fr;
+  }
+}
+
+@media (max-width: 600px) {
+
+  .row {
+    grid-template-columns: 1fr;
+  }
+
+  .cell {
+    display: grid;
+    grid-template-columns: minmax(9em, 30%) 1fr;
+  }
+
+  .cell::before {
+    content: attr(data-name);
+  }
+}
+
 
 .row {
   background-color: var(--background-color);

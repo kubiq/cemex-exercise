@@ -17,16 +17,16 @@
       </div>
 
       <div class="row" *ngFor="let o of orders; trackBy: trackByOrder">
-        <div class="cell">
+        <div class="cell" data-name="Status">
           <ce-order-status [status]="o.status"></ce-order-status>
         </div>
-        <div class="cell">{{ o.orderNumber }}</div>
-        <div class="cell">{{ o.productLine }}</div>
-        <div class="cell"><strong>{{ o.product }}</strong></div>
-        <div class="cell">
+        <div class="cell" data-name="Order Number">{{ o.orderNumber }}</div>
+        <div class="cell" data-name="Product Line">{{ o.productLine }}</div>
+        <div class="cell" data-name="Product"><strong>{{ o.product }}</strong></div>
+        <div class="cell" data-name="Quantity">
           <ce-order-quantity [quantity]="o.quantity"></ce-order-quantity>
         </div>
-        <div class="cell">{{ o.requestedOn | date:'dd.MM.YYYY' }}</div>
+        <div class="cell" data-name="Date Requested">{{ o.requestedOn | date:'dd.MM.YYYY' }}</div>
       </div>
 
     </div>

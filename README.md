@@ -1,6 +1,8 @@
-# CemexExercise
+# Cemex Exercise
 
 This project was generated with [Angular CLI](https://github.com/angular/angular-cli) version 18.0.3.
+
+Go and see at `https://cemex.jakubpistek.cz`
 
 ## Development server
 
