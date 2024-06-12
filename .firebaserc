@@ -1,0 +1,14 @@
+{
+  "targets": {
+    "cemex-f2888": {
+      "hosting": {
+        "web": [
+          "cemex-f2888"
+        ]
+      }
+    }
+  },
+  "projects": {
+    "default": "cemex-f2888"
+  }
+}
