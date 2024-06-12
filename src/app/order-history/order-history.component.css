@@ -1,9 +1,4 @@
 
-:host {
-  --border-shadow: 0px 2px 4px rgba(0, 0, 0, 0.15);
-  --border-radius: 3px;
-}
-
 ce-order-filter {
 
   background-color: var(--background-color);
@@ -43,8 +38,4 @@ ce-order-filter {
   background-color: var(--background-color);
   border-radius: var(--border-radius);
   box-shadow: var(--border-shadow);
-}
-
-.cell {
-  /*background-color: var(--background-color);*/
 }

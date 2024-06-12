@@ -3,10 +3,14 @@ html {
   --primary-color: #001C3B;
   --background-color: #fff;
   --body-color: #f4f6f9;
-  --border-color: #EBEBEB;
+  --divider-color: #EBEBEB;
+  --border-color: #B0B0B0;
   --placeholder-color: #000;
 
   --progress-color: #3FA9F5;
   --warning-color: #FBB03B;
   --completed-color: #7AC943;
+
+  --border-shadow: 0px 2px 4px rgba(0, 0, 0, 0.15);
+  --border-radius: 3px;
 }

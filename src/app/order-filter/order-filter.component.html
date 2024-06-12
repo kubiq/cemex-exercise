@@ -18,12 +18,12 @@
 
   <div class="fp">
     <label for="from">From</label>
-    <nz-date-picker nzSize="small" nzBorderless formControlName="from" id="from" nzPlaceHolder="From"></nz-date-picker>
+    <nz-date-picker nzSize="small" nzBorderless [nzFormat]="dateFormat" formControlName="from" id="from" nzPlaceHolder="From"></nz-date-picker>
   </div>
 
   <div class="fp">
     <label for="to">To</label>
-    <nz-date-picker nzSize="small" nzBorderless formControlName="to" id="to" nzPlaceHolder="To"></nz-date-picker>
+    <nz-date-picker nzSize="small" nzBorderless [nzFormat]="dateFormat" formControlName="to" id="to" nzPlaceHolder="To"></nz-date-picker>
   </div>
 
   <div class="vertical-divider"></div>

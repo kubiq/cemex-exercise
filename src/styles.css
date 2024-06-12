@@ -5,8 +5,12 @@ body, html {
 
 .content-header {
   color: var(--primary-color);
+  font-weight: bold;
 }
 
+/*OVERRIDES*/
+
+.ant-select-single.ant-select-sm:not(.ant-select-customize-input) .ant-select-selector,
 .ant-select-single, .ant-select-single:not(.ant-select-customize-input) .ant-select-selector, .ant-picker {
   padding-left: 0;
 }
@@ -25,4 +29,9 @@ body, html {
 
 .ant-input::placeholder {
   color: var(--placeholder-color);
+}
+
+.ant-input-affix-wrapper {
+  border-color: var(--border-color);
+  border-radius: var(--border-radius);
 }

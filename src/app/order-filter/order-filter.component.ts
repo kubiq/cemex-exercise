@@ -36,6 +36,8 @@ export class OrderFilterComponent {
     {label: 'Completed', value: 'completed', checked: false},
   ];
 
+  protected dateFormat = 'dd.MM.yyyy';
+
   protected filterForm: FormGroup = new FormGroup({
     status: new FormControl(this.statusOptions),
     productLine: new FormControl('all'),

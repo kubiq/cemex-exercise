@@ -8,7 +8,7 @@
 }
 
 .vertical-divider {
-  border-left: 2px solid var(--border-color);
+  border-left: 2px solid var(--divider-color);
   height: 100%;
   content: "";
 }
