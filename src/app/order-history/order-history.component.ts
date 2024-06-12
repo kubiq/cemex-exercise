@@ -6,6 +6,7 @@ import { OrderQuantityComponent } from '../order-quantity/order-quantity.compone
 import { NzTableComponent } from 'ng-zorro-antd/table';
 import { OrderFilterComponent } from '../order-filter/order-filter.component';
 import { OrdersService } from '../orders.service';
+import { NzIconDirective } from 'ng-zorro-antd/icon';
 
 @Component({
   selector: 'ce-order-history',
@@ -20,6 +21,7 @@ import { OrdersService } from '../orders.service';
     OrderFilterComponent,
     AsyncPipe,
     NgIf,
+    NzIconDirective,
   ],
   templateUrl: './order-history.component.html',
   styleUrl: './order-history.component.css'

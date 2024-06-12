@@ -6,25 +6,37 @@
 
   <ng-container *ngIf="ordersService.orders$ | async as orders">
 
-    <div class="grid-table">
-        <div class="header-row">
-          <div class="header-cell">Status</div>
-          <div class="header-cell">Order Number</div>
-          <div class="header-cell">Product Line</div>
-          <div class="header-cell">Product</div>
-          <div class="header-cell">Quantity</div>
-          <div class="header-cell">Date Requested</div>
-        </div>
+    <div class="grid-table" *ngIf="orders.length">
+      <div class="header-row">
+        <div class="header-cell">Status</div>
+        <div class="header-cell">Order Number</div>
+        <div class="header-cell">Product Line</div>
+        <div class="header-cell">Product</div>
+        <div class="header-cell">Quantity</div>
+        <div class="header-cell">Date Requested</div>
+      </div>
 
-        <div class="row" *ngFor="let o of orders; trackBy: trackByOrder">
-          <div class="cell"><ce-order-status [status]="o.status"></ce-order-status></div>
-          <div class="cell">{{ o.orderNumber }}</div>
-          <div class="cell">{{ o.productLine }}</div>
-          <div class="cell"><strong>{{ o.product }}</strong></div>
-          <div class="cell"><ce-order-quantity [quantity]="o.quantity"></ce-order-quantity></div>
-          <div class="cell">{{ o.requestedOn | date:'dd.MM.YYYY' }}</div>
+      <div class="row" *ngFor="let o of orders; trackBy: trackByOrder">
+        <div class="cell">
+          <ce-order-status [status]="o.status"></ce-order-status>
         </div>
+        <div class="cell">{{ o.orderNumber }}</div>
+        <div class="cell">{{ o.productLine }}</div>
+        <div class="cell"><strong>{{ o.product }}</strong></div>
+        <div class="cell">
+          <ce-order-quantity [quantity]="o.quantity"></ce-order-quantity>
+        </div>
+        <div class="cell">{{ o.requestedOn | date:'dd.MM.YYYY' }}</div>
+      </div>
+
     </div>
+
+    <div class="noResults" *ngIf="!orders.length">
+      <span nz-icon nzType="info-circle" nzTheme="fill"></span>
+      <p>Nothing to display</p>
+      <small>Please, adjust filters to see more results.</small>
+    </div>
+
   </ng-container>
 
 
