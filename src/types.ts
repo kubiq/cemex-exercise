@@ -19,7 +19,7 @@ export interface OrderQuantity {
 export interface OrderItem {
   id: number;
   status: OrderStatus;
-  orderNumber: number;
+  orderNumber: string;
   productLine: string;
   product: string;
   quantity: OrderQuantity;
@@ -31,7 +31,7 @@ export interface OrdersFilter {
   productLine?: string;
   from?: Date;
   to?: Date;
-  orderNumber?: number;
+  orderNumber?: string;
 }
 
 export interface OrdersFilterForm {

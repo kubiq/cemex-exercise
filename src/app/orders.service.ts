@@ -17,7 +17,7 @@ export class OrdersService {
   private ordersSubject = new BehaviorSubject([{
     id: 1,
     status: OrderStatus.inProgress,
-    orderNumber: 3301,
+    orderNumber: '3301',
     productLine: 'Ready-Mix',
     product: '1-200-2-C28-12-1-3-000',
     quantity: {
@@ -28,7 +28,7 @@ export class OrdersService {
   }, {
     id: 2,
     status: OrderStatus.pending,
-    orderNumber: 3305,
+    orderNumber: '3305',
     productLine: 'Cement',
     product: 'Gris CPC 30 R Montmerrey Extra 50Kg.',
     quantity: {
@@ -39,7 +39,7 @@ export class OrdersService {
   }, {
     id: 3,
     status: OrderStatus.pending,
-    orderNumber: 3290,
+    orderNumber: '3290',
     productLine: 'Aggregates',
     product: 'Arena Triturada Caliza Malla 4',
     quantity: {
@@ -50,7 +50,7 @@ export class OrdersService {
   }, {
     id: 4,
     status: OrderStatus.completed,
-    orderNumber: 3184,
+    orderNumber: '3184',
     productLine: 'Aggregates',
     product: 'Arena Triturada Caliza Malla 4',
     quantity: {
@@ -61,7 +61,7 @@ export class OrdersService {
   }, {
     id: 5,
     status: OrderStatus.completed,
-    orderNumber: 3295,
+    orderNumber: '3295',
     productLine: 'Cement',
     product: 'Gris CPC30R Tolteca 50Kg',
     quantity: {
@@ -72,7 +72,7 @@ export class OrdersService {
   }, {
     id: 6,
     status: OrderStatus.completed,
-    orderNumber: 2994,
+    orderNumber: '2994',
     productLine: 'Ready-Mix',
     product: '1-200-2-C28-12-1-3-000',
     quantity: {
@@ -94,7 +94,7 @@ export class OrdersService {
             && (!filter.productLine || filter.productLine === this.allProductLinesOption || filter.productLine === order.productLine)
             && (!filter.from || order.requestedOn >= filter.from)
             && (!filter.to || order.requestedOn <= filter.to)
-            && (!filter.orderNumber || order.orderNumber === filter.orderNumber);
+            && (!filter.orderNumber || order.orderNumber.startsWith(filter.orderNumber));
         });
       }),
     );

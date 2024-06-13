@@ -55,7 +55,6 @@ export class OrderFilterComponent {
     this.filterForm.valueChanges.subscribe(filterValue => {
       const filter: OrdersFilter = {
         ...filterValue,
-        orderNumber: filterValue.orderNumber ? parseInt(filterValue.orderNumber) : undefined,
         status: filterValue.status ? filterValue.status.filter((option: NzCheckBoxOptionInterface) =>
           option.checked).map((option: NzCheckBoxOptionInterface) => option.value as OrderStatus) : [],
         productLine: filterValue.productLine ? filterValue.productLine : undefined,
